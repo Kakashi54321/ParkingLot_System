@@ -1,4 +1,21 @@
-# Project Description
+# Parking Lot System
+
+A Java-based automated parking lot management system that provides an interactive command-line interface for managing parking operations. The system supports both interactive shell mode and file-based batch processing.
+
+## Overview
+
+This project implements a parking lot ticketing system that allows customers to park their cars without human intervention. The system automatically allocates the nearest available parking slot, issues tickets, and provides various query capabilities for managing and tracking parked vehicles.
+
+## Features
+
+- **Automated Slot Allocation**: Automatically assigns the nearest available parking slot
+- **Ticket Management**: Issues and tracks parking tickets
+- **Interactive CLI**: Command-line interface for real-time operations
+- **Batch Processing**: File-based input for automated operations
+- **Query Capabilities**: Search by registration number, color, and slot number
+- **Status Monitoring**: View current parking lot status
+
+## Project Description
 
 This is a boilerplate code for the java based implementation of parking lot
 problem statement described below.
@@ -12,6 +29,29 @@ The project is built using Java 1.8. It uses Maven as the build system.
 
 1. Java - 1.8.x
 2. Maven - 3.x.x
+
+## Quick Start
+
+1. Clone the repository:
+```sh
+git clone https://github.com/Kakashi54321/ParkingLot_System.git
+cd ParkingLot_System
+```
+
+2. Build the application:
+```sh
+cd application
+mvn clean package
+```
+
+3. Run the application:
+```sh
+# Interactive mode
+java -jar target/application.jar
+
+# File input mode
+java -jar target/application.jar file_input.txt
+```
 
 ## Building the application using maven
 
@@ -97,15 +137,16 @@ of input - we don't want two distinct submissions.
 
 ## Commands which have already been implemented
 
-- `create_parking_lot`
-- `park`
+- `create_parking_lot <numSlots>` - Creates a parking lot with the specified number of slots
+- `park <registrationNumber> <color>` - Parks a car and allocates the nearest available slot
+- `leave <slotNumber>` - Frees up a parking slot
+- `status` - Displays the current status of all occupied parking slots
 
 ## Commands to implement
 
-- `leave`
-- `registration_numbers_for_cars_with_colour`
-- `slot_numbers_for_cars_with_colour`
-- `slot_number_for_registration_number`
+- `registration_numbers_for_cars_with_colour <color>` - Get all registration numbers of cars with a specific color
+- `slot_numbers_for_cars_with_colour <color>` - Get all slot numbers where cars of a specific color are parked
+- `slot_number_for_registration_number <registrationNumber>` - Get the slot number for a given registration number
 
 ## Interactive mode test
 
